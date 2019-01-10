@@ -181,3 +181,9 @@ Request terlebih dahulu lalu bisa mendapatkan datanya seperti ID atau Nama
 * Function Kabupaten
 * Function Kecamatan
 * Function Kota
+
+---
+### API - POSTMAN
+
+Jika hanya butuh API saja kalian bisa download atau import dari link ini :
+https://www.getpostman.com/collections/711d0a1a35258891849b
