@@ -174,6 +174,8 @@ daerahIndonesiaHelper.getKotaName() -> Return String
 **CATATAN :**
 Request terlebih dahulu lalu bisa mendapatkan datanya seperti ID atau Nama
 
+---
+
 ### Changelog
 
 #### 2.0.0 | 10-01-2018
