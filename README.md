@@ -5,82 +5,176 @@ Provinsi, Kabupaten, Kecamatan, dan Kota.
 
 Tersedia juga API untuk kebutuhan lainnya.
 
-### Prerequisites
-
-What things you need to install the software and how to install them
+### Gradle
 
 ```
-Give examples
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
 ```
-Give the example
+dependencies {
+        implementation 'com.github.farizdotid:Daerah-Indonesia:2.0.0'
+}
 ```
 
-And repeat
+### Cara Penggunaan Library
 
 ```
-until finished
+ private lateinit var daerahIndonesiaHelper: DaerahIndonesiaHelper
+
+ daerahIndonesiaHelper = DaerahIndonesiaHelper(this)
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+#### PROVINSI
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+**REQUEST Semua Provinsi**
 
 ```
-Give an example
+daerahIndonesiaHelper.requestAllProvinsi()
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+**REQUEST Provinsi By ID**
 
 ```
-Give an example
+daerahIndonesiaHelper.requestSingleProvinsiById({id_provinsi})
+
+contoh :
+daerahIndonesiaHelper.requestSingleProvinsiById(32)
 ```
 
-## Deployment
+**REQUEST Provinsi By Name**
 
-Add additional notes about how to deploy this on a live system
+```
+daerahIndonesiaHelper.requestProvinsiByName({nama_provinsi})
 
-## Built With
+contoh :
+daerahIndonesiaHelper.requestProvinsiByName("Jawa")
+```
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+**GET Data Provinsi**
 
-## Contributing
+```
+daerahIndonesiaHelper.getAllProvinsi() -> Return List
+```
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+**GET ID Provinsi**
 
-## Versioning
+```
+daerahIndonesiaHelper.getIdProvinsi() -> Return Int
+```
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+**GET Nama Provinsi**
 
-## Authors
+```
+daerahIndonesiaHelper.getNameProvinsi() -> Return String
+```
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+#### KABUPATEN
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+**REQUEST Kabupaten bedasarkan ID Provinsi**
 
-## License
+```
+daerahIndonesiaHelper.requestKabupaten({id_provinsi})
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+contoh :
+daerahIndonesiaHelper.requestKabupaten(32)
+```
+
+**REQUEST Kabupaten by ID**
+
+```
+daerahIndonesiaHelper.requestKabupatenById({id_provinsi}, {id_kabupaten})
+
+contoh :
+daerahIndonesiaHelper.requestKabupatenById(32, 3214)
+```
+
+**REQUEST Kabupaten by Name**
+
+```
+daerahIndonesiaHelper.requestKabupatenByName({id_provinsi}, {nama})
+
+contoh :
+daerahIndonesiaHelper.requestKabupatenByName(32, "Purwakarta")
+```
+
+**GET Semua Kabupaten**
+
+```
+daerahIndonesiaHelper.getAllKabupaten() -> Return List
+```
+
+**GET ID Kabupaten**
+
+```
+daerahIndonesiaHelper.getIdKabupaten() -> Return Int
+```
+
+**GET Nama Kabupaten**
+
+```
+daerahIndonesiaHelper.getNameKabupaten() -> Return String
+```
+
+#### KOTA
+
+**REQUEST Kota bedasarkan ID Kecamatan**
+
+```
+daerahIndonesiaHelper.requestKota({id_kecamatan})
+
+contoh :
+daerahIndonesiaHelper.requestKota(3214010)
+```
+
+**REQUEST Kota by ID**
+
+```
+daerahIndonesiaHelper.requestKotaById({id_kecamatan}, {id_kota})
+
+contoh :
+daerahIndonesiaHelper.requestKotaById(3214, 3214010008)
+```
+
+**REQUEST Kota by Name**
+
+```
+daerahIndonesiaHelper.requestKotaByName({id_kecamatan}, {nama})
+
+contoh :
+daerahIndonesiaHelper.requestKotaByName(3214, "Jatiluhur")
+```
+
+**GET Semua Kota**
+
+```
+daerahIndonesiaHelper.getAllKota() -> Return List
+```
+
+**GET ID Kota**
+
+```
+daerahIndonesiaHelper.getKotaId() -> Return Int
+```
+
+**GET Nama Kecamatan**
+
+```
+daerahIndonesiaHelper.getKotaName() -> Return String
+```
+
+**CATATAN :**
+Request terlebih dahulu lalu bisa mendapatkan datanya seperti ID atau Nama
 
 ## Changelog
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+### 2.0.0 | 10-01-2018
+* Function Provinsi
+* Function Kabupaten
+* Function Kecamatan
+* Function Kota
