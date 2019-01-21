@@ -178,11 +178,14 @@ Request terlebih dahulu lalu bisa mendapatkan datanya seperti ID atau Nama
 
 ### Changelog
 
-#### 2.0.0 | 10-01-2018
+#### 2.0.0 | 10-01-2019
 * Function Provinsi
 * Function Kabupaten
 * Function Kecamatan
 * Function Kota
+
+#### 2.0.1 | 21-01-2019
+* Null handle
 
 ---
 ### API - POSTMAN

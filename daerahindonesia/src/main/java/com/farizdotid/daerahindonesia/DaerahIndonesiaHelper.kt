@@ -55,11 +55,19 @@ class DaerahIndonesiaHelper(
     }
 
     fun getIdProvinsi(): Int? {
-        return provinsi.getId()
+        return if (provinsi.getId() == null){
+            0
+        } else {
+            provinsi.getId()
+        }
     }
 
     fun getNameProvinsi(): String? {
-        return provinsi.getNama()
+        return if (provinsi.getNama() == null){
+            "-"
+        } else {
+            return provinsi.getNama()
+        }
     }
 
     override fun isReqAllProvinsi(responseAllProvinsi: ResponseAllProvinsi) {
@@ -117,11 +125,19 @@ class DaerahIndonesiaHelper(
     }
 
     fun getIdKabupaten(): Int? {
-        return listKabupaten[0].getId()
+        return if (listKabupaten[0].getId() == null){
+            0
+        } else {
+            listKabupaten[0].getId()
+        }
     }
 
     fun getNameKabupaten(): String? {
-        return listKabupaten[0].getNama()
+        return if (listKabupaten[0].getNama() == null){
+            "-"
+        } else {
+            listKabupaten[0].getNama()
+        }
     }
 
     fun getAllKabupatenByName(): ArrayList<Kabupaten> {
@@ -178,11 +194,19 @@ class DaerahIndonesiaHelper(
     }
 
     fun getKecamatanId(): Int? {
-        return listKecamatan[0].getId()
+        return if (listKecamatan[0].getId() == null){
+            0
+        } else {
+            listKecamatan[0].getId()
+        }
     }
 
     fun getKecamatanName(): String? {
-        return listKecamatan[0].getNama()
+        return if (listKecamatan[0].getNama() == null){
+            "-"
+        } else {
+            listKecamatan[0].getNama()
+        }
     }
 
     override fun isReqKecamatan(responseKecamatan: ResponseKecamatan) {
@@ -234,11 +258,19 @@ class DaerahIndonesiaHelper(
     }
 
     fun getKotaId(): Long? {
-        return listKota[0].getId()
+        return if (listKota[0].getId() == null){
+            0
+        } else {
+            listKota[0].getId()
+        }
     }
 
     fun getKotaName(): String? {
-        return listKota[0].getNama()
+        return if (listKota[0].getNama() == null){
+            "-"
+        } else {
+            listKota[0].getNama()
+        }
     }
 
     override fun isReqKota(responseDesa: ResponseDesa) {
