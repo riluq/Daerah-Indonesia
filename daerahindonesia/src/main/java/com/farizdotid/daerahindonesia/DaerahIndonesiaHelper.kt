@@ -1,7 +1,7 @@
 package com.farizdotid.daerahindonesia
 
 import android.content.Context
-import android.support.annotation.NonNull
+import androidx.annotation.NonNull
 import android.widget.Toast
 import com.farizdotid.daerahindonesia.model.desa.Kota
 import com.farizdotid.daerahindonesia.model.desa.ResponseDesa
