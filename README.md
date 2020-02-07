@@ -18,7 +18,7 @@ allprojects {
 
 ```groovy
 dependencies {
-        implementation 'com.github.riluq:Daerah-Indonesia:2.0.2'
+        implementation 'com.github.riluq:Daerah-Indonesia:2.0.3'
 }
 ```
 
